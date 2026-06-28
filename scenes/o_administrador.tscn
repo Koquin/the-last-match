@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cb8tckp4ebvt3"]
 
+[ext_resource type="Script" uid="uid://dnfj5cqw8ajat" path="res://scenes/o_administrador.gd" id="1_6q2wc"]
 [ext_resource type="Texture2D" uid="uid://dfx5t2o2086xi" path="res://art/idle.png" id="1_nxcuq"]
 [ext_resource type="Texture2D" uid="uid://07ef6wvvhjd8" path="res://art/crouching.png" id="2_kev3i"]
 [ext_resource type="Texture2D" uid="uid://bu183cv1qsr0l" path="res://art/death.png" id="3_akoq6"]
@@ -493,7 +494,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_hl7fx"]
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -545,7 +546,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_r2c5n"]
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -603,7 +604,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_b2otl"]
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -655,7 +656,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_gy4af"]
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -824,6 +825,7 @@ _data = {
 size = Vector2(82, 243)
 
 [node name="o_administrador" type="CharacterBody2D" unique_id=1085335414]
+script = ExtResource("1_6q2wc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=204461303]
 texture = ExtResource("1_nxcuq")
@@ -844,3 +846,6 @@ libraries/walking = SubResource("AnimationLibrary_r2c5n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1765099976]
 position = Vector2(2, 5.5)
 shape = SubResource("RectangleShape2D_dgasd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2003884031]
+position_smoothing_enabled = true
