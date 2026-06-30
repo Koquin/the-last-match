@@ -12,7 +12,7 @@ func Exit():
 func Physics_Update(delta):
 
 	# Movimento
-	character.velocity.x = -300
+	character.velocity.x = -character.walk_velocity
 	
 	# -------- Transições --------
 	if character.player_input.right:
