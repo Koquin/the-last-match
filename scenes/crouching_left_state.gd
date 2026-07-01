@@ -16,3 +16,6 @@ func Physics_Update(delta):
 	
 	if character.player_input.crouch and character.player_input.right:
 		state_machine.Change_State("crouching_right_state")
+		
+	if character.player_input.punch:
+		state_machine.Change_State("punching_while_crouching_left_state")

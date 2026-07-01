@@ -1,9 +1,10 @@
 extends State
 
 func Enter():
+	character.can_parry = false
 	print("Entrou no Enter do idle_right_state_gd")
 	character.velocity.x = 0
-
+	print("Can parry ? %s", character.can_parry)
 	character.animation_player.play("idle/idle_right")
 	
 func Exit():

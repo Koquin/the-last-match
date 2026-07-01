@@ -42,7 +42,6 @@ func ReceiveAttack(attacker):
 
 
 func _physics_process(delta: float) -> void:
-	can_parry = false
 	state_machine.Physics_Update(delta)
 	if (state_machine.current_state.name == "punching_right_state" or state_machine.current_state.name == "punching_left_state"
 	or state_machine.current_state.name == "crouching_right_state" or state_machine.current_state.name == "crouching_left_state"
