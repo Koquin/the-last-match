@@ -6,6 +6,16 @@ extends CharacterBody2D
 const jump_velocity = -1000
 @export var gravity := 2000.0
 @export var walk_velocity = 300
+var is_facing_right: bool = true
+var can_parry: bool = false
+var health_points: int = 6
+
+func IsFacing(attacker):
+
+	if is_facing_right:
+		return attacker.global_position.x > global_position.x
+
+	return attacker.global_position.x < global_position.x
 
 func _ready():
 	print("Entrou no ready do o_administrador.gd")
@@ -18,11 +28,25 @@ func _process(delta):
 	
 func _input(event):
 	state_machine.Handle_Input(event)
+
+func ReceiveDamage():
+	health_points -= 1
 	
+func ReceiveAttack(attacker):
+
+	if can_parry and IsFacing(attacker):
+		attacker.ReceiveParry()
+		return
+	
+	ReceiveDamage()
+
+
 func _physics_process(delta: float) -> void:
+	can_parry = false
 	state_machine.Physics_Update(delta)
 	if (state_machine.current_state.name == "punching_right_state" or state_machine.current_state.name == "punching_left_state"
-	or state_machine.current_state.name == "crouching_right_state" or state_machine.current_state.name == "crouching_left_state"):
+	or state_machine.current_state.name == "crouching_right_state" or state_machine.current_state.name == "crouching_left_state"
+	or state_machine.current_state.name == "parrying_right_state" or state_machine.current_state.name == "parrying_left_state"):
 		velocity = Vector2.ZERO
 	# Add the gravity.
 	if not is_on_floor():

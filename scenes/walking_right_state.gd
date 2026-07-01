@@ -2,7 +2,9 @@ extends State
 
 func Enter():
 	print("Entrou no Enter do walking_right_state_gd")
+	character.is_facing_right = true
 	character.animation_player.play("walking/walking_right")
+	print("Está de frente pra direita ? %s", character.is_facing_right)
 	
 func Exit():
 

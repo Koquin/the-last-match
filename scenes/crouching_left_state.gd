@@ -3,7 +3,8 @@ extends State
 func Enter():
 	print("Entrou no Enter do crouching_left_state_gd")
 	character.animation_player.play("crouching/crouching_left")
-	
+	character.is_facing_right = false
+
 func Exit():
 
 	pass

@@ -22,4 +22,3 @@ func Update():
 	punch = Input.is_action_just_pressed("punch")
 	kick = Input.is_action_just_pressed("kick")
 	parry = Input.is_action_just_pressed("parry")
-	print("Entrou no player_input")

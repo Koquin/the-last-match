@@ -166,4 +166,4 @@ tile_map_data = PackedByteArray("AADh/xQAAAAGAAAAAADi/xQAAAAGAAAAAADj/xQAAAAGAAA
 tile_set = SubResource("TileSet_jueia")
 
 [node name="o_administrador" parent="." unique_id=1085335414 instance=ExtResource("1_nnsk1")]
-position = Vector2(1, 2)
+position = Vector2(330, 173)

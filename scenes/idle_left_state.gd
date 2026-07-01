@@ -3,7 +3,7 @@ extends State
 func Enter():
 	print("Entrou no Enter do idle_left_state_gd")
 	character.velocity.x = 0
-
+	
 	character.animation_player.play("idle/idle_left")
 	
 func Exit():
@@ -34,6 +34,6 @@ func Physics_Update(delta):
 		state_machine.Change_State("punching_left_state")
 		return
 
-	if character.player_input.kick:
-		state_machine.Change_State("kicking_left_state")
+	if character.player_input.parry:
+		state_machine.Change_State("parrying_left_state")
 		return
